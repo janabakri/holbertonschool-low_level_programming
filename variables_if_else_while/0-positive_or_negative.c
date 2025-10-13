@@ -1,3 +1,15 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+/**
+ * main - Entry point
+ *
+ * Description: Assigns a random number to n and prints whether
+ * it is positive, zero, or negative.
+ *
+ * Return: Always 0 (Success)
+ */
 int main(void)
 {
 	int n;
@@ -14,3 +26,4 @@ int main(void)
 
 	return (0);
 }
+
