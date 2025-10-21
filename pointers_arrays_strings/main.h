@@ -3,4 +3,4 @@
 
 void swap_int(int *a, int *b);
 
-#endif
+#endif /* MAIN_H */
