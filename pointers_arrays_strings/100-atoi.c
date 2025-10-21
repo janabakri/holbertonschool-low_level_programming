@@ -1,10 +1,10 @@
 #include "main.h"
 
 /**
- * _atoi - converts a string to an integer
- * @s: the string to convert
+ * _atoi - convert string to integer handling multiple signs and overflow edge cases
+ * @s: string to convert
  *
- * Return: the integer from the string, or 0 if no number found
+ * Return: converted integer or 0 if none found
  */
 int _atoi(char *s)
 {
@@ -13,16 +13,24 @@ int _atoi(char *s)
 	while (s[i] != '\0')
 	{
 		if (s[i] == '-')
-			sign *= -1;
+			sign = -sign;
+		else if (s[i] == '+')
+			; /* just ignore '+' */
 		else if (s[i] >= '0' && s[i] <= '9')
 		{
 			found_digit = 1;
-			result = result * 10 + (s[i] - '0');
+
+			/* Build number digit by digit considering the sign */
+			if (sign == 1)
+				result = result * 10 + (s[i] - '0');
+			else
+				result = result * 10 - (s[i] - '0');
 		}
 		else if (found_digit)
 			break;
+
 		i++;
 	}
 
-	return (sign * result);
+	return (result);
 }
