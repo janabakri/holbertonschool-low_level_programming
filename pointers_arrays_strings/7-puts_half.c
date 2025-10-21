@@ -1,15 +1,31 @@
 #include "main.h"
 
 /**
- * main - check the code
- *
- * Return: Always 0.
+ * puts_half - prints the second half of a string, followed by a new line
+ * @str: input string
  */
-int main(void)
+void puts_half(char *str)
 {
-    char *str;
+	int len = 0, start;
 
-    str = "0123456789";
-    puts_half(str);
-    return (0);
+	if (str == NULL)
+		return;
+
+	/* حساب طول السلسلة */
+	while (str[len] != '\0')
+		len++;
+
+	/* حساب نقطة بداية النصف الثاني حسب طول السلسلة */
+	if (len % 2 == 0)
+		start = len / 2;
+	else
+		start = (len + 1) / 2;
+
+	/* طباعة من بداية النصف الثاني حتى نهاية السلسلة */
+	while (str[start] != '\0')
+	{
+		_putchar(str[start]);
+		start++;
+	}
+	_putchar('\n');
 }
