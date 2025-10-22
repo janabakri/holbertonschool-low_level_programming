@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 /**
- * main - Magic pointer manipulation to set a[2] = 98
+ * main - magic pointer to set a[2] = 98
  *
  * Return: Always 0.
  */
