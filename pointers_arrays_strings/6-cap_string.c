@@ -9,24 +9,20 @@
 char *cap_string(char *str)
 {
 	int i = 0;
+	char sep[] = {' ', '\t', '\n', ',', ';', '.', '!', '?',
+		      '"', '(', ')', '{', '}', '\0'};
+	int j;
 
-	/* List of separators */
-	char sep[] = {' ', '\t', '\n', ',', ';', '.', '!', '?', '"', '(', ')', '{', '}', '\0'};
-
-	/* Capitalize first letter if lowercase */
 	if (str[0] >= 'a' && str[0] <= 'z')
 		str[0] = str[0] - 32;
 
 	while (str[i] != '\0')
 	{
-		int j = 0;
-
-		/* Check if current char is a separator */
+		j = 0;
 		while (sep[j] != '\0')
 		{
 			if (str[i] == sep[j])
 			{
-				/* Capitalize next char if lowercase */
 				if (str[i + 1] >= 'a' && str[i + 1] <= 'z')
 				{
 					str[i + 1] = str[i + 1] - 32;
