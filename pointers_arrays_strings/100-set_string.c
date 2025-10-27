@@ -1,13 +1,21 @@
 #include "main.h"
 
 /**
- * set_string - sets the value of a pointer to a char
- * @s: pointer to the pointer to be changed
- * @to: string to point to
+ * _memcpy - copies memory area
+ * @dest: pointer to destination memory
+ * @src: pointer to source memory
+ * @n: number of bytes to copy
  *
- * Return: void
+ * Return: pointer to dest
  */
-void set_string(char **s, char *to)
+char *_memcpy(char *dest, char *src, unsigned int n)
 {
-    *s = to;
+    unsigned int i;
+
+    for (i = 0; i < n; i++)
+    {
+        dest[i] = src[i];
+    }
+
+    return (dest);
 }
