@@ -7,12 +7,12 @@
  * @age: age of the dog
  * @owner: owner of the dog
  *
- * Description: This function initializes the members of a struct dog
- *              with the given values. If d is NULL, the function does nothing.
+ * Description: This function initializes a variable of type struct dog.
+ * If the pointer d is NULL, the function does nothing.
  */
 void init_dog(struct dog *d, char *name, float age, char *owner)
 {
-	if (d == 0)
+	if (d == NULL)
 		return;
 
 	d->name = name;
