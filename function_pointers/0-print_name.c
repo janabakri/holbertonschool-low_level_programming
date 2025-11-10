@@ -1,3 +1,4 @@
+#include <stddef.h>  /* For NULL */
 #include "function_pointers.h"
 
 /**
@@ -6,7 +7,6 @@
  * @f: pointer to a function that takes a string and prints it
  *
  * Description: If f is NULL, does nothing.
- * Return: void
  */
 void print_name(char *name, void (*f)(char *))
 {
